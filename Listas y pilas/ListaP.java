@@ -59,7 +59,9 @@ public class ListaP
 	{
 		NodePi temp = head;
 
-		temp.setLink(temp.getLink());
+		head=temp.getLink();
+
+		
 		
 	}
 	
