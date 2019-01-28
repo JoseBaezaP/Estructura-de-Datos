@@ -34,9 +34,10 @@ public class ListaP
 		ll.push(11);
 		ll.push(12);
 		ll.push(13);
-		ll.printList();
+		
 		ll.pop();
-		ll.printList();
+	
+		ll.peek();
 		
 
 	}
@@ -45,6 +46,7 @@ public class ListaP
 	{
 		head = new NodePi(dat);
 		numNodes=1;
+		System.out.println("Agregaste un numero ");
 	}
 	
 	public void push(Object dat)
@@ -53,18 +55,23 @@ public class ListaP
 		head = new NodePi(dat);
 		head.setLink(temp);
 		numNodes++;
+		System.out.println("Agregaste un numero ");
 	}
 	
 	public void pop()
 	{
 		NodePi temp = head;
-
+		System.out.println("Eliminaste un numero");
 		head=temp.getLink();
 
-		
+
 		
 	}
-	
+	public void peek(){
+		System.out.println("El top es "+head.getData());
+
+	}
+
 	
 	
 	
