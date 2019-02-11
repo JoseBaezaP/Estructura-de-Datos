@@ -21,64 +21,72 @@ Copyright (C) 2011 netherwolfe
   Some modifications added by Joel  2019-01-07
 ============================================================================*/
 
-public class ListaP
+public class LinkedListCompletar
 {
 	//Class variables for the Linked List
-	private static NodePi head;
+	private static Node head;
 	private static int numNodes;
 	
 	public static void main(String [] args)
 	{
 		System.out.println("/=/=/=/= TESTING /=/=/=/=");
-		ListaP ll = new ListaP(10);
-		ll.push(11);
-		ll.push(12);
-		ll.push(13);
+		LinkedListCompletar ll = new LinkedListCompletar(10);
+		ll.addAtHead(8);
+		ll.addAtHead(6);
+		ll.addAtHead(4);
+		ll.addAtHead(2);
 		ll.printList();
-		ll.pop();
-	
-		ll.peek();
+		ll.addNum(4);
+		ll.printList();
 		
-
 	}
 	
-	public ListaP(Object dat)
+	public LinkedListCompletar(Object dat)
 	{
-		head = new NodePi(dat);
+		head = new Node(dat);
 		numNodes=1;
-		System.out.println("Agregaste un numero ");
 	}
 	
-	public void push(Object dat)
+	public void addAtHead(Object dat)
 	{
-		NodePi temp = head;
-		head = new NodePi(dat);
+		Node temp = head;
+		head = new Node(dat);
 		head.setLink(temp);
 		numNodes++;
-		System.out.println("Agregaste un numero ");
 	}
 	
-	public void pop()
-	{
-		NodePi temp = head;
-		System.out.println("Eliminaste un numero");
-		head=temp.getLink();
-
-
+	public void addNum(int x){
+		Node holder;
+		Node temp=head;
+		int bandera =1;
 		
-	}
-	public void peek(){
-		System.out.println("El top es "+head.getData());
+		while(temp.getLink()!=null){
+		if(temp.getData()<x && temp.getLink().getData()>x){
+			holder=temp.getLink();
+			temp.setLink(new Node(x));
+			temp.getLink().setLink(holder);
+			bandera=0;
+			break;
+		} 
+		else{
+			if(temp.getLink().getData()==x){
+				temp.setLink(temp.getLink().getLink());
+				x=2*x;
+			
+			}
+		}
+		temp=temp.getLink();
+		}
+		if(temp.getLink()==null && bandera==1){
+			temp.setLink(new Node(x));
+		}
 
 	}
-
-	
-	
 	
 	public static void printList()
 	{
-		System.out.println("Number of elements:"+getSize());
-		NodePi temp = head;
+		System.out.println("Lista:");
+		Node temp = head;
 		while(temp != null)
 		{
 			System.out.println(temp.getData());

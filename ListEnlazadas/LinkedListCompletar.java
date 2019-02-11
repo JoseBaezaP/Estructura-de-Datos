@@ -31,23 +31,12 @@ public class LinkedListCompletar
 	{
 		System.out.println("/=/=/=/= TESTING /=/=/=/=");
 		LinkedListCompletar ll = new LinkedListCompletar(10);
-		ll.addAtHead(11);
-		ll.addAtHead(12);
-		ll.addAtHead(13);
-		ll.addAtTail(8);
-		ll.addAtTail(7);
+		ll.addAtHead(8);
+		ll.addAtHead(6);
+		ll.addAtHead(4);
+		ll.addAtHead(2);
 		ll.printList();
-		ll.addAtIndex(4,9);
-		ll.printList();
-		ll.deleteAtIndex(0);
-		ll.printList();
-		ll.deleteAtNode(7);
-		ll.printList();
-		ll.modifyAtNode(11,15);
-		ll.printList();		
-		ll.modifyAtIndex(4,20);
-		ll.printList();		
-
+		
 	}
 	
 	public LinkedListCompletar(Object dat)
