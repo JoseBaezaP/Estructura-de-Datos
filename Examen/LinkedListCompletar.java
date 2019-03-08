@@ -30,13 +30,14 @@ public class LinkedListCompletar
 	public static void main(String [] args)
 	{
 		System.out.println("/=/=/=/= TESTING /=/=/=/=");
+		//Con esta funcion, se van agregando los numeros en la lista
 		LinkedListCompletar ll = new LinkedListCompletar(10);
-		ll.addAtHead(8);
 		ll.addAtHead(6);
 		ll.addAtHead(4);
 		ll.addAtHead(2);
 		ll.printList();
 		ll.addNum(4);
+		//Con esta funcion se le da el dato para poder comparar en la lista
 		ll.printList();
 		
 	}
